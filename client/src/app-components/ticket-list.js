@@ -181,7 +181,7 @@ class TicketList extends React.Component {
         }) : this.props.tickets;
 
 
-        return sort[0] == 'priority' ? _.orderBy(tickets, [(ticket) => {
+        return sort[0] == 'priority' ? _.sortByOrder(tickets, [(ticket) => {
             switch (ticket.priority) {
                 case 'high':
                     return 3
@@ -192,7 +192,7 @@ class TicketList extends React.Component {
                 default:
                     return 0
             }
-        }], [sort[1]]) : _.orderBy(tickets, [sort[0]], [sort[1]]);
+        }], [sort[1]]) : _.sortByOrder(tickets, [sort[0]], [sort[1]]);
     }
 
     gerTicketTableObject(ticket) {
