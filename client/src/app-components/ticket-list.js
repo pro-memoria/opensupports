@@ -126,6 +126,7 @@ class TicketList extends React.Component {
                     key: 'date',
                     value: i18n('DATE'),
                     className: 'ticket-list__date col-md-2',
+                    order: true,
                     onOrderUp: this.orderByDate.bind(this, 'asc'),
                     onOrderDown: this.orderByDate.bind(this, 'desc')
                 }
@@ -146,6 +147,7 @@ class TicketList extends React.Component {
                     key: 'priority',
                     value: i18n('PRIORITY'),
                     className: 'ticket-list__priority col-md-1',
+                    order: true,
                     onOrderUp: this.orderByPriority.bind(this, 'asc'),
                     onOrderDown: this.orderByPriority.bind(this, 'desc')
                 },
@@ -163,8 +165,9 @@ class TicketList extends React.Component {
                     key: 'date',
                     value: i18n('DATE'),
                     className: 'ticket-list__date col-md-2',
-                    onOrderUp: this.orderByDate.bind(this, 0),
-                    onOrderDown: this.orderByDate.bind(this, 1)
+                    order: true,
+                    onOrderUp: this.orderByDate.bind(this, 'asc'),
+                    onOrderDown: this.orderByDate.bind(this, 'desc')
                 }
             ];
         }
