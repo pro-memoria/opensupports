@@ -40,7 +40,8 @@ class TicketList extends React.Component {
     };
 
     state = {
-        selectedDepartment: 0
+        selectedDepartment: 0,
+        sortOrder: ['date', 'asc']
     };
 
     render() {
@@ -124,7 +125,9 @@ class TicketList extends React.Component {
                 {
                     key: 'date',
                     value: i18n('DATE'),
-                    className: 'ticket-list__date col-md-2'
+                    className: 'ticket-list__date col-md-2',
+                    onOrderUp: this.orderByDate.bind(this, 'asc'),
+                    onOrderDown: this.orderByDate.bind(this, 'desc')
                 }
             ];
         } else if (this.props.type == 'secondary') {
@@ -142,7 +145,9 @@ class TicketList extends React.Component {
                 {
                     key: 'priority',
                     value: i18n('PRIORITY'),
-                    className: 'ticket-list__priority col-md-1'
+                    className: 'ticket-list__priority col-md-1',
+                    onOrderUp: this.orderByPriority.bind(this, 'asc'),
+                    onOrderDown: this.orderByPriority.bind(this, 'desc')
                 },
                 {
                     key: 'department',
@@ -157,7 +162,9 @@ class TicketList extends React.Component {
                 {
                     key: 'date',
                     value: i18n('DATE'),
-                    className: 'ticket-list__date col-md-2'
+                    className: 'ticket-list__date col-md-2',
+                    onOrderUp: this.orderByDate.bind(this, 0),
+                    onOrderDown: this.orderByDate.bind(this, 1)
                 }
             ];
         }
@@ -168,9 +175,24 @@ class TicketList extends React.Component {
     }
 
     getTickets() {
-        return (this.state.selectedDepartment) ? _.filter(this.props.tickets, (ticket) => {
+        const sort = this.state.sortOrder
+        const tickets = (this.state.selectedDepartment) ? _.filter(this.props.tickets, (ticket) => {
             return ticket.department.id == this.state.selectedDepartment
         }) : this.props.tickets;
+
+
+        return sort[0] == 'priority' ? _.orderBy(tickets, [(ticket) => {
+            switch (ticket.priority) {
+                case 'high':
+                    return 3
+                case 'medium':
+                    return 2
+                case 'low':
+                    return 1
+                default:
+                    return 0
+            }
+        }], [sort[1]]) : _.orderBy(tickets, [sort[0]], [sort[1]]);
     }
 
     gerTicketTableObject(ticket) {
@@ -262,6 +284,14 @@ class TicketList extends React.Component {
                   return ticket.unreadStaff;
               }
         }
+    }
+
+    orderByDate() {
+        this.setState({sortOrder: ['date', desc]})
+    }
+
+    orderByPriority(desc) {
+        this.setState({sortOrder: ['priority', desc]})
     }
 }
 

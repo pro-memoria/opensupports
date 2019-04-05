@@ -109,7 +109,7 @@ export default (
                     <Route path="my-account" component={AdminPanelMyAccount} />
 
                     <Route path="tickets">
-                        <IndexRedirect to="my-tickets" />
+                        <IndexRedirect to="all-tickets" />
                         <Route path="my-tickets" component={AdminPanelMyTickets} />
                         <Route path="new-tickets" component={AdminPanelNewTickets} />
                         <Route path="all-tickets" component={AdminPanelAllTickets} />

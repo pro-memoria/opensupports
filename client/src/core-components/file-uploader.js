@@ -33,7 +33,6 @@ class FileUploader extends React.Component {
             image/png,
             image/jpeg,
             image/bmp,
-            image/tiff,
             application/gzip,
             application/x-gzip,
             application/zip,
@@ -45,7 +44,10 @@ class FileUploader extends React.Component {
             text/csv,
             text/rtf,
             application/msword,
+            application/vnd.openxmlformats-officedocument.wordprocessingml.document,
             application/vnd.ms-excel,
+            application/vnd.ms-powerpoint,
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
             text/plain,
             application/pdf
         `;

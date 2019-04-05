@@ -252,7 +252,6 @@ class TicketViewer extends React.Component {
                     <div className="row">
                         <div className="ticket-viewer__response-actions">
                             {this.renderCustomResponses()}
-                            {this.renderPrivate()}
                         </div>
                     </div>
                     <div className="ticket-viewer__response-field row">
@@ -260,6 +259,7 @@ class TicketViewer extends React.Component {
                         {(this.props.allowAttachments) ? <FormField name="file" field="file"/> : null}
                         <div className="ticket-viewer__response-buttons">
                             <SubmitButton type="secondary">{i18n('RESPOND_TICKET')}</SubmitButton>
+                            {this.renderPrivate()}
                             <div>
                                 <Button size="medium" onClick={this.onCloseTicketClick.bind(this)}>{i18n('CLOSE_TICKET')}</Button>
                                 {(this.showDeleteButton())? <Button className="ticket-viewer__delete-button" size="medium" onClick={this.onDeleteTicketClick.bind(this)}>{i18n('DELETE_TICKET')}</Button> : null}
@@ -300,7 +300,7 @@ class TicketViewer extends React.Component {
         if (this.props.userStaff) {
             return (
                 <div className="ticket-viewer__response-private">
-                    <FormField label={i18n('PRIVATE')} name="private" field="checkbox"/>
+                    <FormField label={i18n('PRIVATE')} name="private" required field="select" items={['si', 'no']}/>
                     <InfoTooltip className="ticket-viewer__response-private-info" text={i18n('PRIVATE_RESPONSE_DESCRIPTION')} />
                 </div>
             );
@@ -482,7 +482,7 @@ class TicketViewer extends React.Component {
             dataAsForm: true,
             data: _.extend({
                 ticketNumber: this.props.ticket.ticketNumber
-            }, formState, {private: formState.private ? 1 : 0}, TextEditor.getContentFormData(formState.content))
+            }, formState, {private: formState.private === 'si' ? 1 : 0}, TextEditor.getContentFormData(formState.content))
         }).then(this.onCommentSuccess.bind(this), this.onCommentFail.bind(this));
     }
 
