@@ -55,7 +55,7 @@ class TicketViewer extends React.Component {
         loading: false,
         commentValue: TextEditor.createEmpty(),
         commentEdited: false,
-        commentPrivate: 'no'
+        commentPrivate: false
     };
 
     componentDidMount() {
@@ -300,7 +300,7 @@ class TicketViewer extends React.Component {
         if (this.props.userStaff) {
             return (
                 <div className="ticket-viewer__response-private">
-                    <FormField label={i18n('PRIVATE')} name="private" required field="select" items={['si', 'no']}/>
+                    <FormField label={i18n('PRIVATE')} name="private" field="checkbox"/>
                     <InfoTooltip className="ticket-viewer__response-private-info" text={i18n('PRIVATE_RESPONSE_DESCRIPTION')} />
                 </div>
             );
@@ -323,12 +323,12 @@ class TicketViewer extends React.Component {
                 commentValue: formState.content,
                 commentFile: formState.file,
                 commentEdited: true,
-                commentPrivate: formState.private ? 'si' : 'no'
+                commentPrivate: formState.private
             })},
             values: {
                 'content': this.state.commentValue,
                 'file': this.state.commentFile,
-                'private': this.state.commentPrivate ? 'si' : 'no'
+                'private': this.state.commentPrivate
             }
         };
     }
@@ -482,7 +482,7 @@ class TicketViewer extends React.Component {
             dataAsForm: true,
             data: _.extend({
                 ticketNumber: this.props.ticket.ticketNumber
-            }, formState, {private: formState.private === 'si' ? 1 : 0}, TextEditor.getContentFormData(formState.content))
+            }, formState, {private: formState.private ? 1 : 0}, TextEditor.getContentFormData(formState.content))
         }).then(this.onCommentSuccess.bind(this), this.onCommentFail.bind(this));
     }
 
