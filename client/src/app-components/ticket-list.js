@@ -187,13 +187,13 @@ class TicketList extends React.Component {
         return sort[0] == 'priority' ? _.sortByOrder(tickets, [(ticket) => {
             switch (ticket.priority) {
                 case 'high':
-                    return 3
-                case 'medium':
-                    return 2
-                case 'low':
-                    return 1
-                default:
                     return 0
+                case 'medium':
+                    return 1
+                case 'low':
+                    return 2
+                default:
+                    return 3
             }
         }], [sort[1]]) : _.sortByOrder(tickets, [sort[0]], [sort[1]]);
     }
@@ -289,7 +289,7 @@ class TicketList extends React.Component {
         }
     }
 
-    orderByDate() {
+    orderByDate(desc) {
         this.setState({sortOrder: ['date', desc]})
     }
 

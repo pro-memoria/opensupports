@@ -55,7 +55,7 @@ class TicketViewer extends React.Component {
         loading: false,
         commentValue: TextEditor.createEmpty(),
         commentEdited: false,
-        commentPrivate: false
+        commentPrivate: 'no'
     };
 
     componentDidMount() {
@@ -323,12 +323,12 @@ class TicketViewer extends React.Component {
                 commentValue: formState.content,
                 commentFile: formState.file,
                 commentEdited: true,
-                commentPrivate: formState.private
+                commentPrivate: formState.private ? 'si' : 'no'
             })},
             values: {
                 'content': this.state.commentValue,
                 'file': this.state.commentFile,
-                'private': this.state.commentPrivate
+                'private': this.state.commentPrivate ? 'si' : 'no'
             }
         };
     }
