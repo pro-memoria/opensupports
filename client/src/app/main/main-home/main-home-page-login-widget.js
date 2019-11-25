@@ -3,6 +3,7 @@ import ReactDOM   from 'react-dom';
 import {connect}  from 'react-redux';
 import classNames from 'classnames';
 import _          from 'lodash';
+import {Link} from 'react-router';
 
 import SessionActions from 'actions/session-actions';
 import API         from 'lib-app/api-call';
@@ -17,6 +18,7 @@ import FormField        from 'core-components/form-field';
 import Widget           from 'core-components/widget';
 import WidgetTransition from 'core-components/widget-transition';
 import Message          from 'core-components/message';
+
 
 class MainHomePageLoginWidget extends React.Component {
 
@@ -60,6 +62,7 @@ class MainHomePageLoginWidget extends React.Component {
                 <Button className="login-widget__forgot-password" type="link" onClick={this.onForgotPasswordClick.bind(this)} onMouseDown={(event) => {event.preventDefault()}}>
                     {i18n('FORGOT_PASSWORD')}
                 </Button>
+                <div className="signup-link">{i18n('NEW_USER')} <Link to={'/signup'}>{i18n('SIGN_UP')}</Link></div>
             </Widget>
         );
     }

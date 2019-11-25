@@ -6,7 +6,7 @@ import history from 'lib-app/history';
 import Widget from 'core-components/widget';
 import Card from 'core-components/card';
 import i18n from 'lib-app/i18n';
-import Header from 'core-components/header';
+// import Header from 'core-components/header';
 
 class MainHomePagePortal extends React.Component {
     static propTypes = {
@@ -16,9 +16,9 @@ class MainHomePagePortal extends React.Component {
     render() {
         return (
             <Widget className={classNames('main-home-page-portal', this.props.className)}>
-                <div className="main-home-page-portal__title">
+                {/* <div className="main-home-page-portal__title">
                     <Header title={this.props.title || i18n('SUPPORT_CENTER')} description={i18n('SUPPORT_CENTER_DESCRIPTION')} />
-                </div>
+                </div> */}
                 <div className="main-home-page-portal__cards">
                     <div className="main-home-page-portal__card col-md-4">
                         <Card {...this.getTicketsCardProps()}/>

@@ -1,0 +1,249 @@
+body {
+    font-family: "Work Sans",'Helvetica Neue',Arial;
+    background-color: #f8f8f8 !important;
+}
+
+a, a:hover, a:focus{
+    color: #0000fe;
+    text-decoration: underline;
+}
+
+.header{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header__description{
+    font-size:15px;
+    font-family: "Work Sans",'Helvetica Neue',Arial;
+}
+
+.header__title{
+    font-size:30px;
+}
+
+/* line 5, src/core-components/button.scss */
+.button_primary,
+.button_secondary,
+.button_tertiary {
+    border-radius: 40px;
+}
+
+
+/* line 3, src/core-components/card.scss */
+.card {
+    border-radius: 15px;
+    height: 315px;
+    padding: 30px;
+    position: relative;
+    text-align: left;
+}
+
+/* line 10, src/core-components/card.scss */
+.card__title {
+    text-transform: uppercase;
+    margin: 80px 0 10px;
+    font-size: 24px
+}
+
+/* line 10, src/core-components/drop-down.scss */
+.drop-down__current-item {
+    background-color: #565656;
+    color: #fff;
+    padding: 6px;
+    border-radius:20px;
+}
+
+.ticket-viewer__editable-dropdown .drop-down__current-item{
+    background-color: #565656;
+}
+
+/* line 16, src/core-components/drop-down.scss */
+.drop-down__current-item:focus {
+    background-color: #565656
+}
+
+/* line 43, src/core-components/drop-down.scss */
+.drop-down_medium .drop-down__current-item {
+    border-radius: 20px
+}
+
+/* line 56, src/core-components/drop-down.scss */
+.drop-down_large .drop-down__current-item {
+    border-radius: 20px
+}
+
+/* line 14, src/core-components/file-uploader.scss */
+.file-uploader__custom {
+    border-radius:20px;
+    background-color: #565656;
+}
+
+/* line 16, src/core-components/menu.scss */
+.menu__list-item {
+    padding: 10px;
+    transition: none !important;
+}
+
+/* line 33, src/core-components/menu.scss */
+.menu_secondary .menu__list-item_selected,
+.menu_secondary .menu__list-item:hover {
+    border-radius:20px;
+}
+
+/* line 8, src/core-components/tag-selector.scss */
+.tag-selector__drop-down .drop-down__current-item {
+    background-color: #565656;
+}
+
+/* line 3, src/core-components/tag.scss */
+.tag {
+    border-radius: 15px;
+}
+
+/* line 61, src/app-components/ticket-event.scss */
+.ticket-event__comment-author {
+    color: #6a6a6a;
+    font-weight:bold;
+}
+
+/* line 151, src/app-components/ticket-event.scss */
+.ticket-event_circled .ticket-event__circled-author {
+    color: #6a6a6a;
+    font-weight:bold;
+}
+
+/* line 33, src/app-components/ticket-viewer.scss */
+.ticket-viewer__info-row-values {
+    color: #6a6a6a;
+}
+
+/* line 41, src/app/app.scss */
+.application_full-width .main-home-page {
+    width: 80%;
+}
+
+/* line 44, src/app/app.scss */
+.application_full-width .main-home-page .widget {
+     background-color: transparent !important;
+}
+
+/* line 63, src/app/app.scss */
+.application_full-width .dashboard__menu {
+    padding: 5px;
+}
+
+/* line 77, src/app/app.scss */
+.application_full-width .dashboard__menu .menu__header {
+    display:none;
+}
+
+.main-row {
+    text-align: center;
+    padding:10px 0;
+}
+
+.title-intro{
+    font-size:2.3em;
+    font-weight:300;
+}
+
+.intro{
+    font-size:1.1em;
+}
+
+.intro-logo{
+    padding:60px 0 45px;
+}
+
+.checkbox__icon{
+    color: #fff;
+}
+
+/* line 110, src/app/app.scss */
+.application_full-width.application_user-system .main-layout {
+    background-color: transparent !important;
+}
+
+/* line 120, src/app/app.scss */
+.application_full-width.application_user-system .main-home-page__portal-wrapper {
+    margin-left: 300px;
+}
+
+/* line 1, src/app/main/main-home/main-home-page-portal.scss */
+.main-home-page-portal {
+    min-height: 361px
+}
+
+/* line 11, src/app/main/main-layout.scss */
+.main-layout--content {
+    padding: 20px 80px;
+    background-color: #ECECEC;
+}
+
+/* line 36, src/core-components/table.scss */
+.table__row {
+    color: #6a6a6a
+}
+
+.signup-link {
+    background: none;
+    border: none;
+    color: 
+    #8D8D8D;
+    width: initial;
+    height: initial;
+}
+
+@media screen and (max-width: 992px) {
+
+    .card {
+        padding: 50px !important;
+    }
+
+    .main-home-page .widget{
+        width: 550px;   
+    }
+
+    /* line 41, src/app/app.scss */
+    .application_full-width .main-home-page {
+        width: 70%;
+    }    
+
+}
+
+@media screen and (max-width: 720px) {
+
+    .widget{
+        width: 250px;   
+    }
+
+}
+
+@media (max-width: 1350px) {
+
+    .main-layout--content {
+        padding: 20px 20px !important;
+    }
+
+    .card {
+        padding: 15px !important;
+    }
+    
+    .card__title {
+        margin: 70px 0 10px !important;
+    }    
+
+    .card__description{
+        font-size: 12px;
+    }    
+
+}
+
+@media (min-width: 1290px) {
+
+    /* line 1872, src/scss/_reset.scss */
+    .visible-lg-block {
+        display: block !important
+    }
+}
