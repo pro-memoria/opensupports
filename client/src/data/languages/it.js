@@ -14,7 +14,7 @@ export default {
     'RECOVER_PASSWORD': 'Recupera Password',
     'RECOVER_SENT': 'E\' stata inviata un\'email con le istruzioni per il recupero della password.',
     'NEW_EMAIL': 'Nuova Email',
-    'FULL_NAME': 'Nome Completo',
+    'FULL_NAME': 'Nome e Cognome',
     'OLD_PASSWORD': 'Vecchia Password',
     'NEW_PASSWORD': 'Nuova Password',
     'REPEAT_NEW_PASSWORD': 'Ripeti la nuova password',
@@ -314,7 +314,7 @@ export default {
     'MAINTENANCE_MODE_DESCRIPTION': 'Il sistema è in manutenzione. Torneremo al più presto.',
     'EMAIL_TEMPLATES_DESCRIPTION': 'Qui puoi modoficare i modelli delle email che verranno inviate agli utenti. Ricorda che le doppie brackets curly braces indicano un valore variabile. Ad esempio, \'name\' rappresenta il \'nome \' dell\'utente.',
     'SYSTEM_PREFERENCES_DESCRIPTION': 'Qui puoi modificare le preferenze del sistema..',
-    'VERIFY_SUCCESS_DESCRIPTION': 'L\'utente è stato verificato correttamente.',
+    'VERIFY_SUCCESS_DESCRIPTION': 'L\'utente è stato verificato correttamente. Ora è possibile accedere al sistema tramite email e password.',
     'VERIFY_FAILED_DESCRIPTION': 'Non è stata eseguita la verifica.',
     'STATISTICS_DESCRIPTION': 'Qui puoi visualizzare le statistiche relative ai ticket e alle iscrizioni.',
     'ADVANCED_SETTINGS_DESCRIPTION': 'Qui puoi modificare le impostazioni avanzate del tuo sistema. Attenzione, le modifiche apportate non possono essere invertite.',
@@ -373,7 +373,7 @@ export default {
     'CURRENTLY_UNAVAILABLE': 'attualmente non disponibile',
 
     //MESSAGES
-    'SIGNUP_SUCCESS': 'È stato registrato con successo nel nostro sistema di supporto.',
+    'SIGNUP_SUCCESS': 'Utente creato. Per l\'attivazione occorre fare click sul link inviato tramite email.',
     'TICKET_SENT': 'Il Ticket è stato creato con successo.',
     'VALID_RECOVER': 'Password recuperata correttamente',
     'EMAIL_EXISTS': 'Email già in uso',
